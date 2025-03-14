@@ -1,0 +1,9 @@
+{
+  "dependence": {
+    "@react-spring/web": "^9.7.2"
+  },
+  "files": [
+    "index.tsx"
+  ],
+  "name": "SplitText"
+}
