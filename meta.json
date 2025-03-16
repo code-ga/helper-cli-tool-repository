@@ -3,18 +3,21 @@
     "name": "SplitText",
     "version": "1.0.0",
     "description": "Show text with animation",
-    "meta": "https://github.com/code-ga/helper-cli-tool-repository/raw/refs/heads/main/src/components/SplitText/meta.json"
+    "meta": "https://github.com/code-ga/helper-cli-tool-repository/raw/refs/heads/main/src/components/SplitText/meta.json",
+    "storybook-url": "https://helper-cli-tool-repository.vercel.app/?path=/docs/components-splittext--docs"
   },
   "FuzzyText": {
     "name": "FuzzyText",
     "version": "1.0.0",
     "description": "Show text with animation",
-    "meta": "https://github.com/code-ga/helper-cli-tool-repository/raw/refs/heads/main/src/components/FuzzyText/meta.json"
+    "meta": "https://github.com/code-ga/helper-cli-tool-repository/raw/refs/heads/main/src/components/FuzzyText/meta.json",
+    "storybook-url": "https://helper-cli-tool-repository.vercel.app/?path=/docs/components-fuzzytext--docs"
   },
   "ShinyText": {
     "name": "ShinyText",
     "version": "1.0.0",
     "description": "Show text with animation",
-    "meta": "https://github.com/code-ga/helper-cli-tool-repository/raw/refs/heads/main/src/components/ShinyText/meta.json"
+    "meta": "https://github.com/code-ga/helper-cli-tool-repository/raw/refs/heads/main/src/components/ShinyText/meta.json",
+    "storybook-url": "https://helper-cli-tool-repository.vercel.app/?path=/docs/components-shinytext--docs"
   }
 }
