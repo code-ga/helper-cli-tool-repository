@@ -3,6 +3,18 @@
     "name": "SplitText",
     "version": "1.0.0",
     "description": "Show text with animation",
-    "meta": "https://github.com/code-ga/helper-cli-tool/raw/refs/heads/repository/src/components/SplitText/meta.json"
+    "meta": "https://github.com/code-ga/helper-cli-tool-repository/raw/refs/heads/main/src/components/SplitText/meta.json"
+  },
+  "FuzzyText": {
+    "name": "FuzzyText",
+    "version": "1.0.0",
+    "description": "Show text with animation",
+    "meta": "https://github.com/code-ga/helper-cli-tool-repository/raw/refs/heads/main/src/components/FuzzyText/meta.json"
+  },
+  "ShinyText": {
+    "name": "ShinyText",
+    "version": "1.0.0",
+    "description": "Show text with animation",
+    "meta": "https://github.com/code-ga/helper-cli-tool-repository/raw/refs/heads/main/src/components/ShinyText/meta.json"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "dependence": {
+    "@react-spring/web": "^9.7.2"
+  },
+  "files": {
+    "index.tsx": "https://github.com/code-ga/helper-cli-tool-repository/raw/refs/heads/main/src/components/ShinyText/index.tsx"
+  },
+  "storybook-url": "https://helper-cli-tool-repository.vercel.app/?path=/docs/components-shinytext--docs",
+  "name": "ShinyText"
+}

@@ -1,33 +1,32 @@
-import { useSprings, animated } from "@react-spring/web";
+import { useSprings, animated, SpringConfig } from "@react-spring/web";
 import { useEffect, useRef, useState } from "react";
-import { easings } from "@react-spring/web";
 
+interface SplitTextProps {
+  text?: string;
+  className?: string;
+  delay?: number;
+  animationFrom?: { opacity: number; transform: string };
+  animationTo?: { opacity: number; transform: string };
+  easing?: SpringConfig["easing"];
+  threshold?: number;
+  rootMargin?: string;
+  textAlign?: "left" | "right" | "center" | "justify" | "start" | "end";
+  onLetterAnimationComplete?: () => void;
+}
 
-const SplitText = ({
+const SplitText: React.FC<SplitTextProps> = ({
   text = "",
   className = "",
   delay = 100,
   animationFrom = { opacity: 0, transform: "translate3d(0,40px,0)" },
   animationTo = { opacity: 1, transform: "translate3d(0,0,0)" },
-  easing = "easeOutCubic",
+  easing = (t: number) => t,
   threshold = 0.1,
   rootMargin = "-100px",
   textAlign = "center",
-  onLetterAnimationComplete = () => {},
-}: {
-  text: string;
-  className?: string;
-  delay?: number;
-  animationFrom?: { opacity: number; transform: string };
-  animationTo?: { opacity: number; transform: string };
-  easing?: keyof typeof easings;
-  threshold?: number;
-  rootMargin?: string;
-  textAlign?: "center" | "left" | "right";
-  onLetterAnimationComplete?: () => void;
+  onLetterAnimationComplete,
 }) => {
   const words = text.split(" ").map((word) => word.split(""));
-
   const letters = words.flat();
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLParagraphElement>(null);
@@ -38,13 +37,17 @@ const SplitText = ({
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
-          if (ref.current) observer.unobserve(ref.current);
+          if (ref.current) {
+            observer.unobserve(ref.current);
+          }
         }
       },
       { threshold, rootMargin }
     );
 
-    if (ref.current) observer.observe(ref.current);
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
 
     return () => observer.disconnect();
   }, [threshold, rootMargin]);
@@ -54,7 +57,7 @@ const SplitText = ({
     letters.map((_, i) => ({
       from: animationFrom,
       to: inView
-        ? async (next) => {
+        ? async (next: (props: any) => Promise<void>) => {
             await next(animationTo);
             animatedCount.current += 1;
             if (
@@ -73,14 +76,8 @@ const SplitText = ({
   return (
     <p
       ref={ref}
-      className={`split-parent ${className}`}
-      style={{
-        textAlign,
-        overflow: "hidden",
-        display: "inline",
-        whiteSpace: "normal",
-        wordWrap: "break-word",
-      }}
+      className={`split-parent overflow-hidden inline ${className}`}
+      style={{ textAlign, whiteSpace: "normal", wordWrap: "break-word" }}
     >
       {words.map((word, wordIndex) => (
         <span
@@ -95,11 +92,8 @@ const SplitText = ({
             return (
               <animated.span
                 key={index}
-                style={{
-                  ...springs[index],
-                  display: "inline-block",
-                  willChange: "transform, opacity",
-                }}
+                style={springs[index] as unknown as React.CSSProperties}
+                className="inline-block transform transition-opacity will-change-transform"
               >
                 {letter}
               </animated.span>

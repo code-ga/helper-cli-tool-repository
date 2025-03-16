@@ -4,7 +4,7 @@ import SplitText from '../components/SplitText';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Example/SplitText',
+  title: 'Components/SplitText',
   component: SplitText,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
@@ -17,10 +17,11 @@ const meta = {
     text: { control: 'text' },
     className: { control: 'text' },
     delay: { control: 'number' },
-    animationFrom: { control: 'object' },
-    animationTo: { control: 'object' },
+    animationFrom: { control: 'object', description: "{ opacity: number; transform: string }" },
+    animationTo: { control: 'object', description: "{ opacity: number; transform: string }" },
     easing: {
-      control: 'text', options: ["linear",
+      control: 'text', options: [
+        "linear",
         "easeInQuad",
         "easeOutQuad",
         "easeInOutQuad",
@@ -55,7 +56,7 @@ const meta = {
     },
     threshold: { control: 'number' },
     rootMargin: { control: 'text' },
-    textAlign: { control: 'text', options: ['left', 'center', 'right'] },
+    textAlign: { control: 'text', options: ['left', 'center', 'right', 'justify', 'start', 'end'] },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: { onLetterAnimationComplete: fn() },
@@ -68,5 +69,13 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     text: "Hello world",
+    className: "text-black"
+  },
+};
+
+export const TextRed: Story = {
+  args: {
+    text: "Hello world",
+    className: "text-red-500"
   },
 };

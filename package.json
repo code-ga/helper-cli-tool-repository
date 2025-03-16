@@ -13,8 +13,10 @@
   },
   "dependencies": {
     "@react-spring/web": "^9.7.5",
+    "@tailwindcss/vite": "^4.0.14",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.14"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.5",
@@ -22,6 +24,8 @@
     "@storybook/addon-essentials": "^8.6.4",
     "@storybook/addon-interactions": "^8.6.4",
     "@storybook/addon-onboarding": "^8.6.4",
+    "@storybook/addon-styling-webpack": "1.0.1",
+    "@storybook/addon-themes": "8.6.4",
     "@storybook/blocks": "^8.6.4",
     "@storybook/react": "^8.6.4",
     "@storybook/react-vite": "^8.6.4",
