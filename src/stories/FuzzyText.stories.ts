@@ -38,7 +38,7 @@ export const Primary: Story = {
   },
 };
 
-export const White: Story = {
+export const WhiteNeedDarkTheme: Story = {
   args: {
     children: "Hello world",
     color: "#fff",
