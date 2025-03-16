@@ -2,8 +2,8 @@
   "dependence": {
     "@react-spring/web": "^9.7.2"
   },
-  "files": [
-    "index.tsx"
-  ],
+  "files": {
+    "index.tsx": "https://github.com/code-ga/helper-cli-tool/raw/refs/heads/repository/src/components/SplitText/index.tsx"
+  },
   "name": "SplitText"
 }
